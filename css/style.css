@@ -13,6 +13,20 @@ h2 {
   line-height: 20px;
 }
 
+main {
+  padding: 25px 0 70px;
+}
+
+.map {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+}
+
+svg {
+  background: #fff;
+}
+
 .error-message {
   background: hsl(349, 96%, 95%);
   border: 1px solid hsl(349, 96%, 90%);
