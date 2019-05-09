@@ -1,5 +1,5 @@
 html {
-  background: #ccc;
+  background: #333;
 }
 
 h1 {
@@ -17,14 +17,10 @@ main {
   padding: 25px 0 70px;
 }
 
-.map {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: relative;
-}
-
 svg {
-  background: #fff;
+  height: auto;
+  position: relative;
+  width: 100%;
 }
 
 .error-message {
@@ -41,7 +37,6 @@ svg {
 }
 
 footer {
-  background: #fff;
   bottom: 0;
   font-size: 0.8rem;
   left: 0;
