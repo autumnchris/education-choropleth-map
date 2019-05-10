@@ -29,7 +29,6 @@ function displayMap() {
       .attr('viewBox', `0 0 ${w} ${h}`);
 
     const legend = svg.append('g')
-      .attr('id', 'legend')
       .attr('class', 'legend')
       .attr('transform', 'translate(125, 35)');
 
