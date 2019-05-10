@@ -19,7 +19,7 @@ function displayMap() {
     ];
     const margin = {
       top: 80,
-      right: 40
+      left: 100
     };
     const w = window.innerWidth;
     const h = w / 1.6;
@@ -27,6 +27,11 @@ function displayMap() {
     const svg = d3.select('.map')
       .append('svg')
       .attr('viewBox', `0 0 ${w} ${h}`);
+
+    const legend = svg.append('g')
+      .attr('id', 'legend')
+      .attr('class', 'legend')
+      .attr('transform', 'translate(125, 35)');
 
     svg.append('g')
       .attr('class', 'counties')
@@ -53,6 +58,27 @@ function displayMap() {
       const match = educationData.data.find(item => item.fips === d.id)
       return match;
     }
+
+    legend.selectAll('rect')
+      .data(colorData)
+      .enter()
+      .append('rect')
+      .attr('x', (d, i) => i * 60)
+      .attr('y', 5)
+      .attr('width', 60)
+      .attr('height', 15)
+      .attr('fill', d => `hsl(209, 71%, ${d + 30}%)`)
+      .attr('stroke', '#fff');
+
+    legend.selectAll('text')
+      .data(colorData.reverse())
+      .enter()
+      .append('text')
+      .attr('x', (d, i) => i * 60)
+      .attr('y', 35)
+      .attr('fill', '#fff')
+      .text((d) => `<${d}%`)
+      .style('font-size', '0.7rem');
   })).catch(() => {
     document.querySelector('.error-message').style.display = 'block';
   });
