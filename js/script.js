@@ -42,8 +42,6 @@ function displayMap() {
       .attr('d', path)
       .attr('fill', d => `hsl(209, 71%, ${Math.abs(Math.ceil(findMatch(d).bachelorsOrHigher / 10) * 10 - 70) + 30}%)`)
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
-      .attr('data-fips', d => d.id)
-      .attr('data-education', d => findMatch(d).bachelorsOrHigher)
       .on('mouseover', handleMouseover)
       .on('mouseout', handleMouseout);
 
@@ -64,8 +62,7 @@ function displayMap() {
       const tooltip = d3.select('.map')
         .append('div')
         .attr('class', 'tooltip')
-        .style('visibility', 'hidden')
-        .attr('data-education', findMatch(d).bachelorsOrHigher);
+        .style('visibility', 'hidden');
 
       tooltip.transition()
         .duration(200)
