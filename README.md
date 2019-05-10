@@ -4,6 +4,13 @@ My project for the [Visualize Data with a Choropleth Map challenge](https://lear
 
 ---
 
+## Built With
+* [D3.js](https://d3js.org)
+* CSS3
+* [TopoJSON](https://github.com/topojson/topojson)
+* [axios](https://github.com/axios/axios)
+* [Font Awesome](https://fontawesome.com)
+
 ## Demo
 
 View project demo at [https://autumnchris.github.io/education-choropleth-map](https://autumnchris.github.io/education-choropleth-map).
