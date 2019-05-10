@@ -44,7 +44,9 @@ function displayMap() {
       .attr('fill', d => `hsl(209, 71%, ${Math.abs(Math.ceil(findMatch(d).bachelorsOrHigher / 10) * 10 - 70) + 30}%)`)
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
       .attr('data-fips', d => d.id)
-      .attr('data-education', d => findMatch(d).bachelorsOrHigher);
+      .attr('data-education', d => findMatch(d).bachelorsOrHigher)
+      .on('mouseover', handleMouseover)
+      .on('mouseout', handleMouseout);
 
     svg.append('path')
       .datum(topojson.mesh(countyData.data, countyData.data.objects.states, (a, b) => a !== b))
@@ -57,6 +59,26 @@ function displayMap() {
     function findMatch(d) {
       const match = educationData.data.find(item => item.fips === d.id)
       return match;
+    }
+
+    function handleMouseover(d) {
+      const tooltip = d3.select('.map')
+        .append('div')
+        .attr('class', 'tooltip')
+        .style('visibility', 'hidden')
+        .attr('data-education', findMatch(d).bachelorsOrHigher);
+
+      tooltip.transition()
+        .duration(200)
+        .style('visibility', 'visible');
+
+      tooltip.html(`${findMatch(d).area_name}, ${findMatch(d).state}<br/>${findMatch(d).bachelorsOrHigher}%`)
+        .style('left', `${d3.event.pageX - 50}px`)
+        .style('top', `${d3.event.pageY - 70}px`);
+    }
+
+    function handleMouseout() {
+      d3.select('.tooltip').remove();
     }
 
     legend.selectAll('rect')

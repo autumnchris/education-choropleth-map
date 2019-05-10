@@ -23,6 +23,20 @@ svg {
   width: 100%;
 }
 
+.tooltip {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 13px 0px #828282;
+  color: #333;
+  font-size: 0.8rem;
+  line-height: 20px;
+  padding: 8px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+}
+
 .error-message {
   background: hsl(349, 96%, 95%);
   border: 1px solid hsl(349, 96%, 90%);
