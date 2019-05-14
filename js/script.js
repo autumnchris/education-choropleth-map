@@ -1,4 +1,18 @@
 function displayMap() {
+  const margin = {
+    top: 80,
+    left: 100
+  };
+  const w = 1200;
+  const h = w * 0.6;
+  const colorData = [
+    60,
+    50,
+    40,
+    30,
+    20,
+    10
+  ];
 
   function getEducationData() {
     return axios.get('https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/for_user_education.json');
@@ -9,20 +23,6 @@ function displayMap() {
   }
 
   axios.all([getEducationData(), getCountyData()]).then(axios.spread((educationData, countyData) => {
-    const colorData = [
-      60,
-      50,
-      40,
-      30,
-      20,
-      10
-    ];
-    const margin = {
-      top: 80,
-      left: 100
-    };
-    const w = window.innerWidth;
-    const h = w / 1.6;
     const path = d3.geoPath();
     const svg = d3.select('.map')
       .append('svg')
@@ -97,7 +97,7 @@ function displayMap() {
       .attr('fill', '#fff')
       .text((d) => `<${d}%`)
       .style('font-size', '0.7rem');
-  })).catch(() => {
+  })).catch(err => {
     document.querySelector('.error-message').style.display = 'block';
   });
 }

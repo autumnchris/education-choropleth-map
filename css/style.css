@@ -79,3 +79,11 @@ footer a:focus {
     font-size: 1.2rem;
   }
 }
+
+@media only screen and (min-width: 1500px) {
+
+  .tooltip {
+    font-size: 1.1rem;
+    line-height: 24px;
+  }
+}
