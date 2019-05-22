@@ -54,7 +54,7 @@ function displayMap() {
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     function findMatch(d) {
-      const match = educationData.data.find(item => item.fips === d.id)
+      const match = educationData.data.find(item => item.fips === d.id);
       return match;
     }
 
