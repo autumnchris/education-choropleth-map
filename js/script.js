@@ -49,7 +49,7 @@ function displayMap() {
       .datum(topojson.mesh(countyData.data, countyData.data.objects.states, (a, b) => a !== b))
       .attr('class', 'states')
       .attr('fill', 'none')
-      .attr('stroke', '#333')
+      .attr('stroke', 'hsl(0, 0%, 20%)')
       .attr('d', path)
       .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
@@ -86,7 +86,7 @@ function displayMap() {
       .attr('width', 60)
       .attr('height', 15)
       .attr('fill', d => `hsl(209, 71%, ${d + 30}%)`)
-      .attr('stroke', '#fff');
+      .attr('stroke', 'hsl(0, 0%, 20%)');
 
     legend.selectAll('text')
       .data(colorData.reverse())
@@ -94,7 +94,7 @@ function displayMap() {
       .append('text')
       .attr('x', (d, i) => i * 60)
       .attr('y', 35)
-      .attr('fill', '#fff')
+      .attr('fill', 'hsl(0, 0%, 100%)')
       .text((d) => `<${d}%`)
       .style('font-size', '0.7rem');
   })).catch(err => {
