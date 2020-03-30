@@ -103,3 +103,5 @@ function displayMap() {
 }
 
 displayMap();
+
+document.querySelector('.current-year').innerHTML = new Date().getFullYear();
