@@ -1,53 +1,28 @@
+/* BASE PAGE STYLES */
+
 html {
+  background: transparent;
+  box-sizing: border-box;
+  color: hsl(0, 0%, 100%);
+  height: 100%;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+body {
   background: hsl(0, 0%, 20%);
+  min-height: 100%;
+  overscroll-behavior: none;
+  padding: 0 20px;
+  position: relative;
 }
 
-h1 {
-  font-size: 1.3rem;
-  line-height: 24px;
-  padding: 30px 0 10px;
-}
-
-h2 {
-  font-size: 1rem;
-  line-height: 20px;
+header {
+  padding-top: 30px;
 }
 
 main {
-  padding: 25px 0 70px;
-}
-
-svg {
-  height: auto;
-  position: relative;
-  width: 100%;
-}
-
-.tooltip {
-  background: hsl(0, 0%, 100%);
-  border-radius: 3px;
-  box-shadow: 1px 1px 13px 0px hsl(0, 0%, 51%);
-  color: hsl(0, 0%, 20%);
-  font-size: 0.8rem;
-  line-height: 20px;
-  padding: 8px;
-  pointer-events: none;
-  position: absolute;
-  text-align: left;
-  z-index: 1;
-}
-
-.error-message {
-  background: hsl(349, 96%, 95%);
-  border: 1px solid hsl(349, 96%, 90%);
-  border-radius: 5px;
-  color: hsl(349, 96%, 26%);
-  display: none;
-  line-height: 20px;
-  margin: 12px auto;
-  max-width: 700px;
-  padding: 15px 10px;
-  width: 100%;
+  padding-bottom: 6rem;
 }
 
 footer {
@@ -61,13 +36,98 @@ footer {
   width: 100%;
 }
 
-footer a,
-footer a:visited,
-footer a:hover,
-footer a:active,
-footer a:focus {
-  color: hsl(209, 71%, 80%);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  box-sizing: border-box;
+  margin-top: 0;
 }
+
+/* BASE ELEMENT STYLES */
+
+div,
+header,
+main,
+footer,
+p,
+svg {
+  box-sizing: border-box;
+}
+
+svg {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+a,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: hsl(209, 71%, 80%);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus,
+button:focus,
+details:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  box-shadow: 0 0 3px 3px hsla(203, 95%, 62%, 0.8);
+  outline: none;
+}
+
+.message {
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 15px 10px;
+}
+
+/* SPECIFIC ELEMENT STYLES */
+
+h1 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.tooltip {
+  background: hsl(0, 0%, 100%);
+  border-radius: 3px;
+  box-shadow: 1px 1px 13px 0px hsl(0, 0%, 51%);
+  color: hsl(0, 0%, 20%);
+  font-size: 0.8rem;
+  padding: 8px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+}
+
+.error-message {
+  background: hsl(349, 96%, 95%);
+  border: 1px solid hsl(349, 96%, 90%);
+  color: hsl(349, 96%, 26%);
+  display: none;
+}
+
+/* MEDIA QUERIES */
 
 @media only screen and (min-width: 600px) {
 
@@ -84,6 +144,5 @@ footer a:focus {
 
   .tooltip {
     font-size: 1.1rem;
-    line-height: 24px;
   }
 }
