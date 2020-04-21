@@ -89,6 +89,7 @@ textarea:focus,
 
 .message {
   border-radius: 5px;
+  line-height: 1.55;
   margin: 20px auto;
   max-width: 800px;
   padding: 15px 10px;
