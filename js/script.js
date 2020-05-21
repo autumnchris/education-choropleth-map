@@ -6,12 +6,12 @@ function displayMap() {
   const w = 1200;
   const h = w * 0.6;
   const colorData = [
-    60,
     50,
     40,
     30,
     20,
-    10
+    10,
+    0
   ];
 
   function getEducationData() {
@@ -40,7 +40,7 @@ function displayMap() {
       .append('path')
       .attr('class', 'county')
       .attr('d', path)
-      .attr('fill', d => `hsl(209, 71%, ${Math.abs(Math.ceil(findMatch(d).bachelorsOrHigher / 10) * 10 - 70) + 30}%)`)
+      .attr('fill', d => `hsl(209, 71%, ${Math.abs(Math.floor(findMatch(d).bachelorsOrHigher / 10) * 10 - 50) + 40}%)`)
       .attr('transform', `translate(${margin.left}, ${margin.top})`)
       .on('mouseover', handleMouseover)
       .on('mouseout', handleMouseout);
@@ -81,21 +81,21 @@ function displayMap() {
       .data(colorData)
       .enter()
       .append('rect')
-      .attr('x', (d, i) => i * 60)
+      .attr('x', (d, i) => i * 80)
       .attr('y', 5)
-      .attr('width', 60)
+      .attr('width', 80)
       .attr('height', 15)
-      .attr('fill', d => `hsl(209, 71%, ${d + 30}%)`)
+      .attr('fill', d => `hsl(209, 71%, ${d + 40}%)`)
       .attr('stroke', 'hsl(0, 0%, 20%)');
 
     legend.selectAll('text')
       .data(colorData.reverse())
       .enter()
       .append('text')
-      .attr('x', (d, i) => i * 60)
+      .attr('x', (d, i) => i * 80)
       .attr('y', 35)
       .attr('fill', 'hsl(0, 0%, 100%)')
-      .text((d) => `<${d}%`)
+      .text(d => `${d}-${d + 9}%`)
       .style('font-size', '0.7rem');
   })).catch(err => {
     document.querySelector('.error-message').style.display = 'block';
