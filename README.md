@@ -8,7 +8,7 @@ My project for the [Visualize Data with a Choropleth Map challenge](https://lear
 * [D3.js](https://d3js.org)
 * CSS3
 * [TopoJSON](https://github.com/topojson/topojson)
-* [axios](https://github.com/axios/axios)
+* [Axios](https://axios-http.com)
 * AJAX
 * [Normalize.css](https://necolas.github.io/normalize.css)
 * [Font Awesome](https://fontawesome.com)
