@@ -1,6 +1,8 @@
 # Education Choropleth Map
 
-My project for the [Visualize Data with a Choropleth Map challenge](https://learn.freecodecamp.org/data-visualization/data-visualization-projects/visualize-data-with-a-choropleth-map) as part of the curriculum for the Data Visualization Certification on [freeCodeCamp](https://www.freecodecamp.org).
+A D3.js choropleth map of the US that presents each county's percentage of adults who are college graduates.
+
+Inspired by the [Visualize Data with a Choropleth Map challenge]() as part of the curriculum for the [Data Visualization Certification]() on [freeCodeCamp](https://www.freecodecamp.org).
 
 ---
 
