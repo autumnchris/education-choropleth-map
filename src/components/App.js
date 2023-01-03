@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { feature } from "topojson-client";
-import ChoroplethMap from './Choropleth-Map';
-import LoadingSpinner from './Loading-Spinner';
-import ErrorMessage from './Error-Message';
+import ChoroplethMap from './ChoroplethMap';
+import LoadingSpinner from './LoadingSpinner';
+import ErrorMessage from './ErrorMessage';
 
 const App = () => {
   const [loadingStatus, setLoadingStatus] = useState(true);
