@@ -1,0 +1,71 @@
+// STYLES FOR PAGE'S MAIN CONTENT
+
+// Choropleth map styles
+.choropleth-map {
+  height: 100%;
+  position: relative;
+  width: 90%;
+}
+
+.tooltip {
+  background: change-color($black, $lightness: 100%);
+  border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 13px 0px change-color($black, $lightness: 51%);
+  box-shadow: 1px 1px 13px 0px change-color($black, $lightness: 51%);
+  color: change-color($black, $lightness: 20%);
+  font-size: 0.7rem;
+  line-height: normal;
+  max-width: 120px;
+  padding: 8px;
+  -ms-pointer-events: none;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  z-index: 1;
+  @media all and (min-width: 1500px) {
+    font-size: 1.1rem;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 47px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: change-color($black, $lightness: 100%) transparent transparent transparent;
+  }
+}
+
+// Loading spinner styles
+.loading-spinner {
+  -webkit-animation: spin 0.75s linear infinite;
+  animation: spin 0.75s linear infinite;
+  border: 4px solid change-color($black, $lightness: 100%);
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  height: 30px;
+  margin: 50px auto;
+  width: 30px;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
