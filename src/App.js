@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { feature } from "topojson-client";
-import ChoroplethMap from './ChoroplethMap';
-import LoadingSpinner from './LoadingSpinner';
-import ErrorMessage from './ErrorMessage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ChoroplethMap from './components/ChoroplethMap';
+import LoadingSpinner from './components/LoadingSpinner';
+import ErrorMessage from './components/ErrorMessage';
 
 const App = () => {
   const [loadingStatus, setLoadingStatus] = useState(true);
@@ -40,14 +42,11 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <header>
-        <h1>US Educational Attainment, 2010-2014</h1>
-        <h2>Percentage of Adults Age 25 and Older with a Bachelor's Degree or Higher</h2>
-      </header>
+      <Header />
       <main>
         {loadingStatus && !data ? <LoadingSpinner /> : data ? <ChoroplethMap data={data} /> : <ErrorMessage />}
       </main>
-      <footer>Created by <a href="https://autumnchris.github.io/portfolio" target="_blank">Autumn Bullard</a> &copy; {new Date().getFullYear()}</footer>
+      <Footer />
     </React.Fragment>
   );
 }
