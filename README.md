@@ -10,9 +10,13 @@ Inspired by the [Visualize Data with a Choropleth Map challenge](https://www.fre
 * [D3.js](https://d3js.org)
 * [React.js](https://reactjs.org)
 * [Sass](http://sass-lang.com)
+* JavaScript
+* CSS3
+* HTML5
 * [TopoJSON](https://github.com/topojson/topojson)
 * [Axios](https://axios-http.com)
 * AJAX
+* [Node.js](https://nodejs.org/en)
 * [Webpack](https://webpack.js.org)
 * [Babel](https://babeljs.io)
 * [Normalize.css](https://necolas.github.io/normalize.css)
